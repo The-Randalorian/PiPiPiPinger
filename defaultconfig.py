@@ -23,7 +23,9 @@ delay = 300  # time to wait between pings
 threshold = 0.8  # what ratio of pings must fail for the device to be considered unreachable
 
 # Error settings
-error_receiver_emails = "error@sample.com"
-error_delay = 60
-error_block = 12 * 60 * 60 / error_delay  # sends an email every 12 hours
-error_threshold = 2
+error_receiver_emails = "error@sample.com"  # Email to receive error messages
+error_delay = 60  # Time to wait after having an error
+error_block = 12 * 60 * 60 / error_delay  # Time to prevent more error emails from being sent. Default sends an email
+# every 12 hours
+error_threshold = 2  # How many errors must occur in a row for it to be considered an issue. Useful for preventing
+# random errors triggering too many messages.
